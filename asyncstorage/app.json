@@ -1,0 +1,17 @@
+{
+  "name": "asyncstorage",
+  "displayName": "asyncstorage",
+  "expo": {
+    "name": "asyncstorage",
+    "slug": "asyncstorage",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}

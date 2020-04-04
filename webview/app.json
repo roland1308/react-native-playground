@@ -1,0 +1,17 @@
+{
+  "name": "webview",
+  "displayName": "webview",
+  "expo": {
+    "name": "webview",
+    "slug": "webview",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}

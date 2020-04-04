@@ -1,0 +1,17 @@
+{
+  "name": "nativealertapp",
+  "displayName": "nativealertapp",
+  "expo": {
+    "name": "nativealertapp",
+    "slug": "nativealertapp",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
