@@ -1,53 +1,35 @@
 import React from 'react';
-import { Text, View, FlatList } from 'react-native';
+import { FlatList } from 'react-native';
 import HouseItem from '../components/HouseItem';
-const MOCK_DATA = [
-    {
-        name: 'Mr. Johns Conch house', address: '12th Street, Neverland',
-        images: 'http://hmp.me/ol5'
-    },
-    {
-        name: 'Mr. Pauls Mansion', address: '625, Sec-5, Ingsoc',
-        images: 'http://hmp.me/ol6'
-    },
-    {
-        name: 'Mr. Nalwayas Villa', address: '11, Heights, Oceania',
-        images: 'http://hmp.me/ol7'
-    },
-    {
-        name: 'Mr. Johns Conch house', address: '12th Street, Neverland',
-        images: 'http://hmp.me/ol5'
-    },
-    {
-        name: 'Mr. Pauls Mansion', address: '625, Sec-5, Ingsoc', images:
-            'http://hmp.me/ol6'
-    },
-    {
-        name: 'Mr. Nalwayas Villa', address: '11, Heights, Oceania', images:
-            'http://hmp.me/ol7'
-    },
-    {
-        name: 'Mr. Johns Conch house', address: '12th Street, Neverland',
-        images: 'http://hmp.me/ol5'
-    },
-    {
-        name: 'Mr. Pauls Mansion', address: '625, Sec-5, Ingsoc', images:
-            'http://hmp.me/ol6'
-    },
-    {
-        name: 'Mr. Nalwayas Villa', address: '11, Heights, Oceania', images:
-            'http://hmp.me/ol7'
+class HomeListScreen extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            dataSource: null,
+        }
     }
-];
 
-const HomeListScreen = () => {
-    return (
-        <FlatList
-            data={MOCK_DATA}
-            renderItem={({ item }) => <HouseItem {...item} />}
-            keyExtractor={(item, index) => index.toString()}
-        />
-    );
+    async componentDidMount() {
+        try {
+            const response = await fetch("https://www.akshatpaul.com/list-properties");
+            const responseJson = await response.json();
+            this.setState({
+                dataSource: responseJson,
+            });
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
+    render() {
+        return (
+            <FlatList
+                data={this.state.dataSource}
+                renderItem={({ item }) => <HouseItem {...item} />}
+                keyExtractor={(item, index) => index.toString()}
+            />
+        );
+    }
 }
 
 export default HomeListScreen

@@ -7,7 +7,7 @@ const HouseItem = (props) => {
     return (
         <FadeInView style={styles.row} >
             <Image
-                source={{ uri: props.images }}
+                source={{ uri: props.images.thumbnail }}
                 style={styles.thumbnail} />
             <View style={styles.rightBox}>
                 <Text style={styles.name}>{props.name}</Text>
