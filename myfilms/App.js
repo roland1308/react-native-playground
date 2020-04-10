@@ -13,13 +13,14 @@ export default class App extends React.Component {
         <Stack.Navigator
           initialRouteName="ListMovies"
           screenOptions={{
+            headerShown: false,
             gestureEnabled: false, headerStyle: {
               backgroundColor: '#f4511e',
             },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            }
+            // headerTintColor: '#fff',
+            // headerTitleStyle: {
+            //   fontWeight: 'bold',
+            // }
           }}
         >
           <Stack.Screen
